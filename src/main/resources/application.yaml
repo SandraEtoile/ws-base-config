@@ -1,0 +1,25 @@
+server:
+  port: 9015
+spring:
+  application:
+    name: yoke-config-server
+  cloud:
+    config:
+      profile: local
+      discovery:
+        enabled: false
+      server:
+        default-profile: local
+        git:
+          uri: https://github.com/SandraEtoile/ws-base-config.git
+          basedir: cache/base-configs
+          repos:
+            yoke-attender-configs:
+              uri: https://github.com/SandraEtoile/ws-attender-config.git
+              basedir: cache/yoke-attender-configs
+        prefix: configuration
+  profiles:
+    active: local
+
+
+
